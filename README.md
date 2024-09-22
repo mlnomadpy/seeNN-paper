@@ -3,7 +3,7 @@
 # SeeNN: Leveraging Multimodal Deep Learning for In-Flight Long-Range Atmospheric Visibility Estimation in Aviation Safety
 
   
-[`Project Website`](https://www.tahabouhsine.com/seeNN-paper) &centerdot; [`Paper`]() &centerdot; [**`>> [Github] <<`**](https://github.com/mlnomadpy/ijcnn-seenn#readme) &centerdot; [`Data`](https://github.com/mlnomadpy/ijcnn-seenn/tree/main/seeset/dataset#readme) &centerdot; [`Pretrained Weights`](https://github.com/mlnomadpy/ijcnn-seenn/tree/main/model/keras#readme) &centerdot; 
+[`Project Website`](https://www.tahabouhsine.com/seeNN-paper) &centerdot; [`Paper`]() &centerdot; [**`>> [Results] <<`**](https://api.wandb.ai/links/rowanvisibility/1lnog2cj) &centerdot; [`Data`](https://www.kaggle.com/datasets/skywolfmo/seeset-v1-multimodal-in-flight-ave) &centerdot; 
 
 </div>
 
