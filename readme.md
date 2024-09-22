@@ -24,7 +24,7 @@ SeeNN is a multi-modal image classification system that leverages various image 
 To train the model:
 
 ```bash
-bash train.sh
+bash train_all.sh
 ```
 
 
