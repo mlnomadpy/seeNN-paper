@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Demo</title>
+</head>
+<body>
+    <h1>Image Classification Demo</h1>
+    <form id="predictionForm">
+        <div>
+            <label for="rgb">RGB Image:</label>
+            <input type="file" id="rgb" name="rgb" accept="image/*" required>
+        </div>
+        <div>
+            <label for="depth">Depth Image (optional):</label>
+            <input type="file" id="depth" name="depth" accept="image/*">
+        </div>
+        <div>
+            <label for="normal">Normal Image (optional):</label>
+            <input type="file" id="normal" name="normal" accept="image/*">
+        </div>
+        <div>
+            <label>Additional Modalities:</label>
+            <input type="checkbox" id="edge" name="modalities" value="edge">
+            <label for="edge">Edge</label>
+            <input type="checkbox" id="entropy" name="modalities" value="entropy">
+            <label for="entropy">Entropy</label>
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            const modalities = [];
+            document.querySelectorAll('input[name="modalities"]:checked').forEach(checkbox => {
+                modalities.push(checkbox.value);
+            });
+            formData.append('modalities', modalities.join(','));
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                document.getElementById('result').innerHTML = `
+                    <p>Predicted Class: ${data.predicted_class}</p>
+                    <p>Confidence: ${(data.confidence * 100).toFixed(2)}%</p>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = 'An error occurred during prediction.';
+            }
+        });
+    </script>
+</body>
+</html>
