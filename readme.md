@@ -1,4 +1,6 @@
-# SeeNN: Multi-Modal Image Classification
+# SeeNN: Leveraging Multimodal Deep Learning for In-Flight Long-Range Atmospheric Visibility Estimation in Aviation Safety
+Taha Bouhsine, Giuseppina Carannant, Nidhal C. Bouaynaya, Soufiane Idbraim, Phuong Tran, Grant Morfit, Maggie Mayfield, Charles Cliff Johnson,
+
 
 ## Overview
 SeeNN is a multi-modal image classification system that leverages various image modalities to improve classification accuracy. This project is part of a research paper exploring advanced techniques in computer vision and deep learning.
